@@ -27,22 +27,14 @@ public class sample_UT {
         assertEquals(Sample.sumLists(list1, list2), expectedResult);
     }
 
-    @Test
-    void sumLists_null() {
-        assertEquals(Sample.sumLists(null, null), 0);
-    }
-
-    @Test
-    void sumLists_partialNull() {
-        List<Integer> list1 = Arrays.asList(6, 3);
-        assertEquals(Sample.sumLists(list1, null), 9);
-    }
-
     private static Stream<Arguments> sharedIndices_source() {
         return Stream.of(
                 Arguments.of(1, "Snake", "snowing"),
                 Arguments.of(1, "LOREM", "IPSUM"),
-                Arguments.of(0, "", "Example")
+                Arguments.of(0, "", "Example"),
+                Arguments.of(3, "LOREM", "LORIT"),
+                Arguments.of(0, null, "IPSUM"),
+                Arguments.of(0, "LOREM", null)
         );
     }
 
