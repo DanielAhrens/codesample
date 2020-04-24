@@ -15,4 +15,9 @@ public class Sample {
         }
         return subtotal1 + subtotal2;
     }
+
+
+    public static Integer sharedIndices(String item1, String item2) {
+        return 0;
+    }
 }
