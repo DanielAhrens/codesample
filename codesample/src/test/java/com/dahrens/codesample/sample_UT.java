@@ -1,6 +1,5 @@
 package com.dahrens.codesample;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -42,5 +41,18 @@ public class sample_UT {
     @MethodSource("sharedIndices_source")
     void sharedIndices(Integer expectedValue, String item1, String item2) {
         assertEquals(Sample.sharedIndices(item1, item2), expectedValue);
+    }
+
+    private static Stream<Arguments> filterUppercase_source() {
+        return Stream.of(
+                Arguments.of("ICC", "thisIsCamelCase"),
+                Arguments.of("TNOT", "ThisisNOTcamelcase")
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("filterUppercase_source")
+    void filterUppercase(String expectedValue, String item1) {
+        assertEquals(Sample.filterUppercase(item1), expectedValue);
     }
 }

@@ -30,4 +30,15 @@ public class Sample {
         }
         return counter;
     }
+
+    /** Given a string, build a new string with only the uppercase characters of that string **/
+    public static String filterUppercase(String orig) {
+        StringBuilder buffer = new StringBuilder();
+        for(char c: orig.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                buffer.append(c);
+            }
+        }
+        return buffer.toString();
+    }
 }
